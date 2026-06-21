@@ -1,0 +1,16 @@
+{
+  "name": "Cubino",
+  "short_name": "Cubino",
+  "description": "Chat with the pride",
+  "start_url": "/app",
+  "display": "standalone",
+  "background_color": "#1e1f22",
+  "theme_color": "#5865f2",
+  "icons": [
+    {
+      "src": "/lion-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

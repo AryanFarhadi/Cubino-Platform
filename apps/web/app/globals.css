@@ -1,0 +1,124 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --cubino-bg-deep: #1e1f22;
+  --cubino-bg-darker: #111214;
+  --cubino-bg-surface: #2b2d31;
+  --cubino-bg-elevated: #383a40;
+  --cubino-bg-chat: #313338;
+  --cubino-text: #f2f3f5;
+  --cubino-muted: #949ba4;
+  --cubino-accent: #5865f2;
+  --cubino-gold: #f0b132;
+  --cubino-mane: #e8a040;
+  --cubino-online: #23a559;
+  --cubino-danger: #f23f43;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--cubino-bg-deep);
+  color: var(--cubino-text);
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a1b1e;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #232428;
+}
+
+.paw-ripple:active {
+  transform: scale(0.98);
+}
+
+@keyframes mane-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes lion-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes achievement-pop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.5;
+  }
+  60% {
+    transform: scale(1.12);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(2.5rem) rotate(280deg);
+    opacity: 0;
+  }
+}
+
+.mane-spin {
+  animation: mane-spin 1.4s linear infinite;
+}
+
+.lion-pulse {
+  animation: lion-pulse 2s ease-in-out infinite;
+}
+
+/* Discord-style markdown in chat */
+.prose-cubino {
+  --tw-prose-body: #dbdee1;
+  --tw-prose-headings: #f2f3f5;
+  --tw-prose-links: #00a8fc;
+  --tw-prose-code: #f2f3f5;
+}
+
+.prose-cubino pre code[data-language]:not([data-language=""])::before {
+  content: attr(data-language);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #949ba4;
+  background: rgba(0, 0, 0, 0.35);
+  border-bottom-right-radius: 0.375rem;
+  pointer-events: none;
+  user-select: none;
+}
